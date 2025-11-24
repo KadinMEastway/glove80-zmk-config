@@ -2,7 +2,7 @@
 
 ![MoErgo Logo](moergo_logo.png)
 
-This repo is created from the official ZMK configuration of the MoErgo Glove80 wireless split contoured keyboard.
+This repo was created from the official ZMK configuration of the MoErgo Glove80 wireless split contoured keyboard.
 
 ## Resources
 - The [official MoErgo Glove80 Support](https://moergo.com/glove80-support) web site. Glove80 documentation and other technical resources.
