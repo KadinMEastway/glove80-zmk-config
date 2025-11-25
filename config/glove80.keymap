@@ -114,7 +114,7 @@
             &kp TAB        &kp Q   &kp W   &kp E   &kp R   &kp T                                                                &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
             &hot LCTRL ESC &kp A   &kp S   &kp D   &kp F   &kp G                                                                &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
             &kp EQUAL      &kp Z   &kp X   &kp C   &kp V   &kp B   &kp LGUI   &kp LALT    &none      &none  &none    &none      &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp MINUS
-            &to GAME       &none   &none   &none   &none           &kp SPACE  &kp LSHIFT  &td_lower  &none  &kp RET  &kp BSPC           &none   &none      &none     &none     &magic MAGIC 0
+            &to GAME       &none   &none   &none   &none           &kp SPACE  &kp LSHIFT  &td_lower  &none  &kp BSPC &kp RET            &none   &none      &none     &none     &magic MAGIC 0
             >;
         };
 
