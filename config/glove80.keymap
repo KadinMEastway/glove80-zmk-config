@@ -32,6 +32,13 @@
             display-name = "Mod-Hold-Or-Tap";
         };
 
+        bspc_spc: backspace_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp SPACE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         td_lower: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LOWER";
@@ -114,7 +121,7 @@
             &kp TAB        &kp Q   &kp W   &kp E   &kp R   &kp T                                                             &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
             &hot LCTRL ESC &kp A   &kp S   &kp D   &kp F   &kp G                                                             &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
             &kp EQUAL      &kp Z   &kp X   &kp C   &kp V   &kp B   &kp LGUI   &kp LALT   &none  &none  &kp LALT  &td_lower   &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp MINUS
-            &tog GAME      &none   &none   &none   &none           &kp SPACE  &kp LSHFT  &none  &none  &kp BSPC  &kp RET             &none   &none      &none     &none     &magic MAGIC 0
+            &tog GAME      &none   &none   &none   &none           &kp SPACE  &kp LSHFT  &none  &none  &bspc_spc &kp RET             &none   &none      &none     &none     &magic MAGIC 0
             >;
 
         };
