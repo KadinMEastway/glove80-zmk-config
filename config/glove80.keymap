@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/modifiers.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -46,7 +47,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         td_lwr: tap_dance_lower {
@@ -163,8 +164,8 @@
             &none   &kp N6    &kp N7  &kp N8  &kp N9  &kp N0                                                      &none   &none    &none    &none     &none   &none
             &none   &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                                                      &none   &none    &none    &none     &none   &none
             &none   &kp TAB   &kp Q   &kp W   &kp E   &kp R                                                       &none   &none    &kp UP   &none     &none   &none
-            &none   &kp LCTRL &kp A   &kp S   &kp D   &kp F   &kp LCTRL &none     &none  &none  &none  &none      &none   &kp LEFT &kp DOWN &kp RIGHT &none   &none
-            &none   &kp Z     &kp X   &kp C   &kp V           &kp SPACE &kp SHIFT &none  &none  &none  &kp SPACE          &none    &none    &none     &none   &none
+            &none   &kp LCTRL &kp A   &kp S   &kp D   &kp F   &kp LSHFT &kp ESC   &none  &none  &none  &none      &none   &kp LEFT &kp DOWN &kp RIGHT &none   &none
+            &none   &none     &kp Z   &kp X   &kp C           &kp V     &kp SPACE &none  &none  &none  &kp SPACE          &none    &none    &none     &none   &none
             >;
         };
 
