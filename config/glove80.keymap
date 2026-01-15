@@ -43,10 +43,27 @@
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
 
-        shft: shift {
+        mm_bkt: mod_morph_brackets {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
+            label = "MOD_MORPH_BRACKETS";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_brc: mod_morph_braces {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH_BRACES";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_par: mod_morph_parenthesis {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH_PARENTHESIS";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -149,12 +166,12 @@
 
         numble_layer {
             bindings = <
-            &none  &none  &none           &none           &none                                                                                     &none    &none    &none   &none     &none
-            &none  &none  &none           &none           &none           &none                                                           &none     &none    &none    &none   &none     &none
-            &none  &none  &none           &none           &none           &none                                                           &kp COMMA &kp N7   &kp N8   &kp N9  &kp PLUS  &kp ASTRK
-            &none  &none  &shft LBRC RBRC &shft LBKT RBKT &shft LPAR RPAR &none                                                           &kp DOT   &kp N4   &kp N5   &kp N6  &kp MINUS &kp FSLH
-            &none  &none  &none           &none           &none           &none   &trans   &trans   &trans   &trans   &to DEFAULT &none   &kp N0    &kp N1   &kp N2   &kp N3  &kp EQUAL &none
-            &none  &none  &none           &none           &none                   &trans   &trans   &trans   &trans   &trans      &trans            &none    &none    &none   &none     &none
+            &none  &none  &none   &none   &none                                                                             &none    &none    &none   &none     &none
+            &none  &none  &none   &none   &none   &none                                                           &none     &none    &none    &none   &none     &none
+            &none  &none  &none   &none   &none   &none                                                           &kp COMMA &kp N7   &kp N8   &kp N9  &kp PLUS  &kp ASTRK
+            &none  &none  &mm_brc &mm_bkt &mm_par &none                                                           &kp DOT   &kp N4   &kp N5   &kp N6  &kp MINUS &kp FSLH
+            &none  &none  &none   &none   &none   &none   &trans   &trans   &trans   &trans   &to DEFAULT &none   &kp N0    &kp N1   &kp N2   &kp N3  &kp EQUAL &none
+            &none  &none  &none   &none   &none           &trans   &trans   &trans   &trans   &trans      &trans            &none    &none    &none   &none     &none
             >;
         };
 
