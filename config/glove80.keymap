@@ -26,7 +26,6 @@
     behaviors {
         hot: hold_or_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP_A_KEY_OR_HOLD_ANOTHER";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
@@ -36,7 +35,6 @@
 
         magic: magic_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "MAGIC_HOLD_TAP";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
@@ -45,7 +43,6 @@
 
         mm_bkt: mod_morph_brackets {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_MORPH_BRACKETS";
             #binding-cells = <0>;
             bindings = <&kp LBKT>, <&kp RBKT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -53,7 +50,6 @@
 
         mm_brc: mod_morph_braces {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_MORPH_BRACES";
             #binding-cells = <0>;
             bindings = <&kp LBRC>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -61,15 +57,21 @@
 
         mm_par: mod_morph_parenthesis {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_MORPH_PARENTHESIS";
             #binding-cells = <0>;
             bindings = <&kp LPAR>, <&kp RPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        mm_bksp_sp: morph_mod_backspace_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BKSP>, <&kp SPACE>;
+            mods = <MOD_LSFT>;
+        };
+
+
         td_lwr: tap_dance_lower {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_LOWER";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
             bindings = <&mo LOWER>, <&to LOWER>;
@@ -77,7 +79,6 @@
 
         td_nmbl: tap_dance_numble {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_NUMBLE";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
             bindings = <&mo NUMBLE>, <&to NUMBLE>;
@@ -86,7 +87,6 @@
 
     macros {
         rgb_ug_status_macro: rgb_ug_status_macro_0 {
-            label = "RGB_UG_STATUS";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -94,7 +94,6 @@
         };
 
         bt_0: bt_profile_macro_0 {
-            label = "BT_0";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -103,7 +102,6 @@
         };
 
         bt_1: bt_profile_macro_1 {
-            label = "BT_1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -112,7 +110,6 @@
         };
 
         bt_2: bt_profile_macro_2 {
-            label = "BT_2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -121,7 +118,6 @@
         };
 
         bt_3: bt_profile_macro_3 {
-            label = "BT_3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -134,21 +130,21 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // --------------------------------------------------------------------------------------------------------------------------------------
-            // | GAME  | NONE | NONE | NONE | NONE |                                                             | NONE | NONE | NONE | NONE | NONE |
-            // | NONE  | NONE | NONE | NONE | NONE | NONE |                                               | NONE | NONE | NONE | NONE | NONE | NONE |
-            // | TAB   |  Q   |  W   |  E   |  R   |  T   |                                               |  Y   |   U  |   I  |  O   |  P   |  \   |
-            // | ESC   |  A   |  S   |  D   |  F   |  G   |                                               |  H   |   J  |   K  |  L   |  ;   |  '   |
-            // | NONE  |  Z   |  X   |  C   |  V   |  B   | LCTRL | LALT  | NONE | | LGUI | NUMBL | LOWER |  N   |   M  |   ,  |  .   |  /   |  `   |
-            // | MAGIC | NONE | NONE | NONE | NONE |      | BSPC  | LSHFT | NONE | | NONE | SPACE | RET   |      | NONE | NONE | NONE | NONE | NONE |
+            // ---------------------------------------------------------------------------------------------------------------------------------------
+            // | GAME  | NONE | NONE | NONE | NONE |                                                              | NONE | NONE | NONE | NONE | NONE |
+            // | NONE  | NONE | NONE | NONE | NONE | NONE |                                                | NONE | NONE | NONE | NONE | NONE | NONE |
+            // | TAB   |  Q   |  W   |  E   |  R   |  T   |                                                |  Y   |   U  |   I  |  O   |  P   |  \   |
+            // | ESC   |  A   |  S   |  D   |  F   |  G   |                                                |  H   |   J  |   K  |  L   |  ;   |  '   |
+            // | NONE  |  Z   |  X   |  C   |  V   |  B   | LCTRL | LALT  | NONE | | LGUI | NUMBL  | LOWER |  N   |   M  |   ,  |  .   |  /   |  `   |
+            // | MAGIC | NONE | NONE | NONE | NONE |      | NONE  | LS SP | NONE | | NONE | BSP SP | RET   |      | NONE | NONE | NONE | NONE | NONE |
 
             bindings = <
-            &tog GAME       &none   &none   &none   &none                                                                           &none   &none      &none     &none     &none
-            &none           &none   &none   &none   &none   &none                                                           &none   &none   &none      &none     &none     &none
-            &kp TAB         &kp Q   &kp W   &kp E   &kp R   &kp T                                                           &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-            &kp ESC         &kp A   &kp S   &kp D   &kp F   &kp G                                                           &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-            &none           &kp Z   &kp X   &kp C   &kp V   &kp B   &kp LCTRL &kp LALT   &none  &kp LGUI &td_nmbl  &td_lwr  &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp GRAVE
-            &magic MAGIC 0  &none   &none   &none   &none           &kp BSPC  &kp LSHFT  &none  &none    &kp SPACE &kp RET          &none   &none      &none     &none     &none
+            &tog GAME       &none   &none   &none   &none                                                                                       &none   &none      &none     &none     &none
+            &none           &none   &none   &none   &none   &none                                                                       &none   &none   &none      &none     &none     &none
+            &kp TAB         &kp Q   &kp W   &kp E   &kp R   &kp T                                                                       &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+            &kp ESC         &kp A   &kp S   &kp D   &kp F   &kp G                                                                       &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+            &none           &kp Z   &kp X   &kp C   &kp V   &kp B   &kp LALT  &kp LCTRL          &none  &kp LGUI  &td_nmbl     &td_lwr  &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp GRAVE
+            &magic MAGIC 0  &none   &none   &none   &none           &none     &hot LSHIFT SPACE  &none  &none     &mm_bksp_sp  &kp RET          &none   &none      &none     &none     &none
             >;
 
         };
@@ -166,12 +162,12 @@
 
         numble_layer {
             bindings = <
-            &none  &none  &none   &none   &none                                                                             &none    &none    &none   &none     &none
-            &none  &none  &none   &none   &none   &none                                                           &none     &none    &none    &none   &none     &none
-            &none  &none  &none   &none   &none   &none                                                           &kp COMMA &kp N7   &kp N8   &kp N9  &kp PLUS  &kp ASTRK
-            &none  &none  &mm_brc &mm_bkt &mm_par &none                                                           &kp DOT   &kp N4   &kp N5   &kp N6  &kp MINUS &kp FSLH
-            &none  &none  &none   &none   &none   &none   &trans   &trans   &trans   &trans   &to DEFAULT &none   &kp N0    &kp N1   &kp N2   &kp N3  &kp EQUAL &none
-            &none  &none  &none   &none   &none           &trans   &trans   &trans   &trans   &trans      &trans            &none    &none    &none   &none     &none
+            &none  &none  &none   &none   &none                                                                               &none    &none    &none   &none     &none
+            &none  &none  &none   &none   &none   &none                                                             &none     &none    &none    &none   &none     &none
+            &none  &none  &none   &none   &none   &none                                                             &kp COMMA &kp N7   &kp N8   &kp N9  &kp PLUS  &kp ASTRK
+            &none  &none  &mm_brc &mm_bkt &mm_par &none                                                             &kp DOT   &kp N4   &kp N5   &kp N6  &kp MINUS &kp FSLH
+            &none  &none  &none   &none   &none   &none   &trans   &trans   &trans   &trans   &to DEFAULT   &none   &kp N0    &kp N1   &kp N2   &kp N3  &kp EQUAL &none
+            &none  &none  &none   &none   &none           &trans   &trans   &trans   &trans   &trans        &trans            &none    &none    &none   &none     &none
             >;
         };
 
