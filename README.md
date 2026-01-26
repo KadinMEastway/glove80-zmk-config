@@ -5,11 +5,11 @@
 This repo was created from the official ZMK configuration of the MoErgo Glove80 wireless split contoured keyboard.
 
 ## Setup
-To locate the firmware files and flash your Glove80 from this repo...
+To locate the firmware file from this repo...
 1. Click "Actions" in the main navigation, and in the left navigation click the "Build" link.
 2. Select the desired workflow run. You can also start a new build from this page by clicking "Run workflow".
-3. Under the "Artifacts" section, locate a firmware file called "glove80.uf2".
-4. Download and flash the firmware to your Glove80. See official Glove80 Support website for instructions (linked below).
+3. Under the "Artifacts" section near the bottom, you should be able to download a file called "glove80.uf2".
+4. See official Glove80 Support website for flashing instructions (linked below).
 
 Your keyboard is now ready to use.
 
