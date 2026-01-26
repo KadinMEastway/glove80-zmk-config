@@ -1,5 +1,4 @@
 # MoErgo Glove80 Custom Configuration for ZMK
-
 ![MoErgo Logo](moergo_logo.png)
 
 This repo was created from the official ZMK configuration of the MoErgo Glove80 wireless split contoured keyboard.
