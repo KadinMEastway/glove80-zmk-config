@@ -31,12 +31,12 @@
             bindings = <&kp>, <&kp>;
         };
 
-        ht_ls_cw: hold_tap_lshift_caps_word {
+        ht_cw: hold_tap_caps_word {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <180>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp>, <&caps_word>;
         };
 
         ht_mgc: hold_tap_magic {
@@ -137,12 +137,12 @@
             // | MAGIC | NONE | NONE | NONE | NONE |      | BSPC  | LS_CW | NONE | | NONE | LWR_SP | RET  |      | NONE | NONE | NONE | NONE | NONE |
 
             bindings = <
-            &td_gm     &none   &none   &none   &none                                                                                 &none   &none      &none     &none     &none
-            &none      &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                                &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &none
-            &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                                                 &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-            &kp ESC    &kp A   &kp S   &kp D   &kp F   &kp G                                                                 &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-            &kp EQUAL  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp LCTRL  &kp LALT   &none  &none  &none            &kp LGUI &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp MINUS
-            &td_mgc    &none   &none   &none   &none           &kp BSPC   &ht_ls_cw  &none  &none  &lt LOWER SPACE  &kp RET          &none   &none      &none     &none     &none
+            &td_gm     &none   &none   &none   &none                                                                                      &none   &none      &none     &none     &none
+            &none      &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                                     &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &none
+            &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                                                      &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+            &kp ESC    &kp A   &kp S   &kp D   &kp F   &kp G                                                                      &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+            &kp EQUAL  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp LCTRL  &kp LALT        &none  &none  &none            &kp LGUI &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp MINUS
+            &td_mgc    &none   &none   &none   &none           &kp BSPC   &ht_cw LSHFT 0  &none  &none  &lt LOWER SPACE  &kp RET          &none   &none      &none     &none     &none
             >;
 
         };
