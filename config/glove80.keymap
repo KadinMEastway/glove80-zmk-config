@@ -26,7 +26,7 @@
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <180>;
             bindings = <&kp>, <&kp>;
         };
@@ -141,29 +141,29 @@
             // | GAME  | NONE | NONE | NONE | NONE |                                                             | NONE | NONE | NONE | NONE | NONE |
             // | NONE  |  1   |  2   |  3   |  4   |  5   |                                               |   6  |   7  |   8  |   9  |   0  | NONE |
             // |  TAB  |  Q   |  W   |  E   |  R   |  T   |                                               |   Y  |   U  |   I  |   O  |   P  |   \  |
-            // |  ESC  |  A   |  S   |  D   |  F   |  G   |                                               |   H  |   J  |   K  |   L  |   ;  |   '  |
-            // |   =   |  Z   |  X   |  C   |  V   |  B   | LCTRL | LALT  | NONE | | NONE |  NONE  | LGUI |   N  |   M  |   ,  |   .  |   /  |   -  |
+            // | GRAVE |  A   |  S   |  D   |  F   |  G   |                                               |   H  |   J  |   K  |   L  |   ;  |   '  |
+            // |   =   |  Z   |  X   |  C   |  V   |  B   | LC_ES | LALT  | NONE | | NONE |  NONE  | LGUI |   N  |   M  |   ,  |   .  |   /  |   -  |
             // | MAGIC | NONE | NONE | NONE | NONE |      | BSPC  | LS_CW | NONE | | NONE | LWR_SP | RET  |      | NONE | NONE | NONE | NONE | NONE |
 
             bindings = <
-            &td_gm     &none   &none   &none   &none                                                                                          &none   &none      &none     &none     &none
-            &none      &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                                         &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &none
-            &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                                                          &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-            &kp ESC    &kp A   &kp S   &kp D   &kp F   &kp G                                                                          &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-            &kp EQUAL  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp LCTRL  &kp LALT            &none  &none  &none            &kp LGUI &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp MINUS
-            &td_mgc    &none   &none   &none   &none           &kp BSPC   &ht_sk LSHFT LSHFT  &none  &none  &lt LOWER SPACE  &kp RET          &none   &none      &none     &none     &none
+            &td_gm     &none   &none   &none   &none                                                                                              &none   &none      &none     &none     &none
+            &none      &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                                             &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &none
+            &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                                                              &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+            &kp GRAVE  &kp A   &kp S   &kp D   &kp F   &kp G                                                                              &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+            &kp EQUAL  &kp Z   &kp X   &kp C   &kp V   &kp B   &ht LCTRL ESC  &kp LALT            &none  &none  &none            &kp LGUI &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp MINUS
+            &td_mgc    &none   &none   &none   &none           &kp BSPC       &ht_sk LSHFT LSHFT  &none  &none  &lt LOWER SPACE  &kp RET          &none   &none      &none     &none     &none
             >;
 
         };
 
         lower_layer {
             bindings = <
-            &none   &none   &none   &none   &none                                                                            &none    &none   &none     &none   &none
-            &none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                                          &kp F6   &kp F7   &kp F8  &kp F9    &kp F10 &none
-            &trans  &none   &none   &none   &mm_bkt &none                                                           &none    &none    &none   &none     &none   &none
-            &trans  &none   &none   &none   &mm_par &kp GRAVE                                                       &kp LEFT &kp DOWN &kp UP  &kp RIGHT &none   &none
-            &none   &none   &none   &none   &mm_brc &none     &trans   &trans   &trans   &trans   &trans   &trans   &none    &none    &none   &none     &none   &none
-            &none   &none   &none   &none   &none             &trans   &trans   &trans   &trans   &none    &trans            &none    &none   &none     &none   &none
+            &none   &none   &none   &none   &none                                                                          &none    &none   &none     &none   &none
+            &none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                                        &kp F6   &kp F7   &kp F8  &kp F9    &kp F10 &none
+            &trans  &none   &none   &none   &mm_bkt &none                                                         &none    &none    &none   &none     &none   &none
+            &trans  &none   &none   &none   &mm_par &none                                                         &kp LEFT &kp DOWN &kp UP  &kp RIGHT &none   &none
+            &none   &none   &none   &none   &mm_brc &none   &trans   &trans   &trans   &trans   &trans   &trans   &none    &none    &none   &none     &none   &none
+            &none   &none   &none   &none   &none           &trans   &trans   &trans   &trans   &none    &trans            &none    &none   &none     &none   &none
             >;
         };
 
